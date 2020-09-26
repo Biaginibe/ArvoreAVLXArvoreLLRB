@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1601082739 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+	"arvoreLLRB.h"
+
+1601078175 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvore.h
+
+1601078368 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvore.c
+	<stdio.h>
+	<stdlib.h>
+	"arvore.h"
+
+1601078510 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+
+1601078175 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.h
+
+1601083849 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.h
+
+1601083973 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreLLRB.h"
+
