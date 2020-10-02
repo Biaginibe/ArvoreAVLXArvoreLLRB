@@ -4,7 +4,7 @@ typedef struct informacao func;
 
 ArvAVL *cria_ArvAVL();
 
-void coleta_dados();
+void coleta_dados(ArvAVL *raiz);
 
 void liberar_ArvAVL(ArvAVL *raiz);
 

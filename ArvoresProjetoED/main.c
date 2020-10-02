@@ -16,10 +16,10 @@ int main(){
     /*cria raizLLRB*/
     raizLLRB = cria_ArvLLRB();
 
-    coleta_dados();
+    coleta_dados(raizAVL);
 
     /*inserindo dados AVL*/
-    x = insere_ArvAVL(raizAVL, 100);
+    /*x = insere_ArvAVL(raizAVL, 100);
     if(x){
         printf("Elemento inserido com sucesso!\n\n");
     }else{
@@ -61,7 +61,7 @@ int main(){
     }else{
         printf("Erro, não foi possivel inserir o elemento.\n\n");
     }
-    printf("\n");
+    printf("\n");*/
 
     /*testa se ta vazia ARV AVL*/
     if(vazia_ArvAVL(raizAVL)){

@@ -26,7 +26,7 @@ ArvAVL *cria_ArvAVL(){
     return raiz;
 }
 
-void coleta_dados(){
+void coleta_dados(ArvAVL *raiz){
     /*------------------------------------------------------*/
     FILE *massadados;
     massadados = fopen("massaDados.csv", "r");
@@ -37,12 +37,14 @@ void coleta_dados(){
         printf("\n\nChegamos aqui\n\n\n\n");
     }
     char *texto;
-    while(fgets(texto, 30, massadados)){
-		 func.codigo = atoi(strtok(texto, ";"));
-		 strcpy(func.nome, strtok(NULL, ";"));
-		 func.idade = atoi(strtok(NULL, ";"));
-		 strcpy(func.dpto, strtok(NULL, ";"));
-		 func.salario = atof(strtok(NULL, "\n"));
+    struct NO no;
+    while(fgets(texto, 100, massadados)){
+		 no.info.codigo = atoi(strtok(texto, ";"));
+		 strcpy(no.info.nome, strtok(NULL, ";"));
+		 no.info.idade = atoi(strtok(NULL, ";"));
+		 strcpy(no.info.depto, strtok(NULL, ";"));
+		 no.info.salario = atof(strtok(NULL, "\n"));
+		 insere_ArvAVL(*raiz, no.info.codigo);
     }
     /*------------------------------------------------------*/
     fclose(massadados);
