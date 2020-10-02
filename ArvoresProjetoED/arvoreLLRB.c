@@ -96,7 +96,7 @@ int consulta_arvLLRB(ArvLLRB *raiz, int valor){
     return 0;
 }
 
-/*FUNÇÕES DA ARVORE LLRB*/
+/*FUNÃ‡Ã•ES DA ARVORE LLRB*/
 
 int cor(struct NO *H){
     if(H == NULL){
@@ -166,7 +166,7 @@ struct NO *balancear(struct NO *H){
     return H;
 }
 
-struct NO *insereNO(struct NO *H, int valor, int *resp){
+struct NO *insereNO(struct NO *H, struct informacao inf, int *resp){
     if( H == NULL){
             struct NO *novo;
         novo = (struct NO*) malloc(sizeof(struct NO));
@@ -174,20 +174,20 @@ struct NO *insereNO(struct NO *H, int valor, int *resp){
            *resp = 0;
            return NULL;
         }
-        novo->info.codigo = valor;
+        novo->info = inf;
         novo->cor = RED;
         novo->dir = NULL;
         novo->esq = NULL;
         *resp = 1;
         return novo;
     }
-    if(valor == H->info.codigo){
+    if(inf.codigo == H->info.codigo){
         *resp = 0;
     }else{
-        if(valor < H->info.codigo){
-            H->esq = insereNO(H->esq, valor, resp);
+        if(inf.codigo < H->info.codigo){
+            H->esq = insereNO(H->esq, inf, resp);
         }else{
-            H->dir = insereNO(H->dir, valor, resp);
+            H->dir = insereNO(H->dir, inf, resp);
         }
     }
     if(cor(H->dir) == RED && cor(H->esq) == BLACK){
@@ -202,9 +202,9 @@ struct NO *insereNO(struct NO *H, int valor, int *resp){
     return H;
 }
 
-int insere_ArvLLRB(ArvLLRB *raiz, int valor){
+int insere_ArvLLRB(ArvLLRB *raiz, struct informacao inf){
     int resp;
-    *raiz = insereNO(*raiz, valor, &resp);
+    *raiz = insereNO(*raiz, inf, &resp);
     if((*raiz) != NULL){
         (*raiz)->cor = BLACK;
     }
@@ -311,5 +311,32 @@ void posOrdem_ArvLLRB(ArvLLRB *raiz){
         printf("%d\n", (*raiz)->info.codigo);
     }
 }
+
+void coleta_dadosLLRB(ArvLLRB *raiz){
+    /*------------------------------------------------------*/
+    FILE *massadados;
+    massadados = fopen("massaDados.csv", "r");
+    if(massadados == NULL){
+        printf("Nï¿½o foi possivel abrir o arquivo massa de dados\n\n");
+        exit(0);
+    }else{
+        printf("Chegamos aqui\n");
+    }
+    struct informacao func;
+    char texto[100];
+
+    while(fgets(texto, 100, massadados)){
+		 func.codigo = atoi(strtok(texto, ";"));
+		 strcpy(func.nome, strtok(NULL, ";"));
+		 func.idade = atoi(strtok(NULL, ";"));
+		 strcpy(func.empresa, strtok(NULL, ";"));
+		 strcpy(func.depto, strtok(NULL, ";"));
+		 func.salario = atof(strtok(NULL, "\n"));
+		 insere_ArvLLRB(raiz, func);
+    }
+    /*------------------------------------------------------*/
+    fclose(massadados);
+}
+
 
 

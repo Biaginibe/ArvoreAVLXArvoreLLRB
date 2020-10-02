@@ -291,7 +291,7 @@ void posOrdem_ArvAVL(ArvAVL *raiz){
     }
 }
 
-void coleta_dados(ArvAVL *raiz){
+void coleta_dadosAVL(ArvAVL *raiz){
     /*------------------------------------------------------*/
     FILE *massadados;
     massadados = fopen("massaDados.csv", "r");

@@ -21,6 +21,9 @@ void emOrdem_ArvLLRB(ArvLLRB *raiz);
 
 void posOrdem_ArvLLRB(ArvLLRB *raiz);
 
-int insere_ArvLLRB(ArvLLRB *raiz, int valor);
+int insere_ArvLLRB(ArvLLRB *raiz, struct informacao inf);
 
 int remove_ArvLLRB(ArvLLRB *raiz, int valor);
+
+void coleta_dadosLLRB(ArvLLRB *raiz);
+

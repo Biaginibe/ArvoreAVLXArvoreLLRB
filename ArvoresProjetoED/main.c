@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "arvoreAVL.h"
 #include "arvoreLLRB.h"
-
+#include "ColetaDados.h"
 int main(){
 
     int x;
@@ -16,7 +16,10 @@ int main(){
     /*cria raizLLRB*/
     raizLLRB = cria_ArvLLRB();
 
-    coleta_dados(raizAVL);
+    coleta_dadosAVL(raizAVL);
+
+
+    coleta_dadosLLRB(raizLLRB);
 
     /*inserindo dados AVL*/
     /*x = insere_ArvAVL(raizAVL, 100);
@@ -105,7 +108,7 @@ int main(){
 
     /*INSERINDO ARVORE LLRB*/
     printf("AGORA ARV LLRB ");
-    x = insere_ArvLLRB(raizLLRB, 150);
+    /*x = insere_ArvLLRB(raizLLRB, 150);
     if(x){
         printf("Elemento inserido com sucesso!\n\n");
     }else{
@@ -148,7 +151,7 @@ int main(){
         printf("Erro, não foi possivel inserir o elemento.\n\n");
     }
     printf("\n");
-
+*/
     /*testa se ta vazia ARV LLRB*/
     if(vazia_ArvLLRB(raizLLRB)){
         printf("A arvore esta vazia.");
@@ -168,9 +171,9 @@ int main(){
     printf("\n\n");
 
     /*organizando em pré-ordem AVL*/
-    printf("PRE ORDEM\n");
+    /*printf("PRE ORDEM\n");
     preOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*organizando em ordem LLRB*/
     printf("EM ORDEM\n");
@@ -178,15 +181,15 @@ int main(){
     printf("\n\n");
 
     /*organizando em pós-ordem LLRB*/
-    printf("POS ORDEM\n");
+    /*printf("POS ORDEM\n");
     posOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*removendo e exibindo arvore após remoção LLRB*/
-    printf("POS REMOCAO\n");
+    /*printf("POS REMOCAO\n");
     x = remove_ArvLLRB(raizLLRB, 100);
     posOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*destroi a arvore AVL*/
     liberar_ArvAVL(raizAVL);
