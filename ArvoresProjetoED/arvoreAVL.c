@@ -29,10 +29,10 @@ void coleta_dados(ArvAVL *raiz){
         exit(0);
     }
 
-    char texto[300];
+    char texto[1000];
     Func funcionario;
 
-    while(fgets(texto, 300, massadados)){
+    while(fgets(texto, 1000, massadados)){
         funcionario.codigo = atoi(strtok(texto, ";"));
         strcpy(funcionario.nome, strtok(NULL, ";"));
         funcionario.idade = atoi(strtok(NULL, ";"));
