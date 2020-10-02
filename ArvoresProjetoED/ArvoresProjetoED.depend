@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1601082739 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\main.c
+1601604250 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
@@ -12,17 +12,37 @@
 	<stdlib.h>
 	"arvore.h"
 
-1601078510 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.c
+1601600619 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
 
-1601078175 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.h
+1601603398 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.h
 
-1601083849 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.h
+1601578066 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.h
 
-1601083973 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.c
+1601488311 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.c
 	<stdio.h>
 	<stdlib.h>
+	"arvoreLLRB.h"
+
+1601610268 source:c:\users\neone\eloisa\arvoresprojetoed\arvoreavl.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+
+1601607698 c:\users\neone\eloisa\arvoresprojetoed\arvoreavl.h
+
+1601609845 source:c:\users\neone\eloisa\arvoresprojetoed\arvorellrb.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreLLRB.h"
+
+1601578066 c:\users\neone\eloisa\arvoresprojetoed\arvorellrb.h
+
+1601608696 source:c:\users\neone\eloisa\arvoresprojetoed\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
 	"arvoreLLRB.h"
 
