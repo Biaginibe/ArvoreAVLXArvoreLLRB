@@ -1,6 +1,8 @@
 
 typedef struct NO *ArvLLRB;
 
+typedef struct informacao func;
+
 ArvLLRB *cria_ArvLLRB();
 
 void liberar_ArvLLRB(ArvLLRB *raiz);

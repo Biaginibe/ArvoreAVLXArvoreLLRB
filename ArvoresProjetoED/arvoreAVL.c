@@ -2,8 +2,17 @@
 #include <stdlib.h>
 #include "arvoreAVL.h"
 
+struct informacao{
+    int codigo;
+    char nome[100];
+    int idade;
+    char empresa[30];
+    char depto[30];
+    float salario;
+};
+
 struct NO{
-    int info;
+    struct informacao info;
     int alt;
     struct NO *esq;
     struct NO *dir;
@@ -17,7 +26,27 @@ ArvAVL *cria_ArvAVL(){
     return raiz;
 }
 
-
+void coleta_dados(){
+    /*------------------------------------------------------*/
+    FILE *massadados;
+    massadados = fopen("massaDados.csv", "r");
+    if(massadados == NULL){
+        printf("Não foi possivel abrir o arquivo massa de dados\n\n");
+        exit(0);
+    }else{
+        printf("\n\nChegamos aqui\n\n\n\n");
+    }
+    char *texto;
+    while(fgets(texto, 30, massadados)){
+		 func.codigo = atoi(strtok(texto, ";"));
+		 strcpy(func.nome, strtok(NULL, ";"));
+		 func.idade = atoi(strtok(NULL, ";"));
+		 strcpy(func.dpto, strtok(NULL, ";"));
+		 func.salario = atof(strtok(NULL, "\n"));
+    }
+    /*------------------------------------------------------*/
+    fclose(massadados);
+}
 void liberar_ArvAVL(ArvAVL *raiz){
     if(raiz == NULL){
         return;
@@ -136,7 +165,7 @@ int insere_ArvAVL(ArvAVL *raiz, int valor){
             printf("NÓ NOVO VAZIO\n");
             return 0;
         }
-        novo->info = valor;
+        novo->info.codigo = valor;
         novo->alt = 0;
         novo->dir = NULL;
         novo->esq = NULL;
@@ -145,10 +174,10 @@ int insere_ArvAVL(ArvAVL *raiz, int valor){
     }
 
     struct NO *atual = *raiz;
-    if(valor < atual->info){
+    if(valor < atual->info.codigo){
         if((res = insere_ArvAVL(&(atual->esq), valor)) == 1){
             if(fatorBalanceamento_NO(atual) >= 2){
-                if(valor < (*raiz)->esq->info){
+                if(valor < (*raiz)->esq->info.codigo){
                     rotacaoLL(raiz);
                 }else{
                     rotacaoLR(raiz);
@@ -156,10 +185,10 @@ int insere_ArvAVL(ArvAVL *raiz, int valor){
             }
         }
     }else{
-        if(valor > atual->info){
+        if(valor > atual->info.codigo){
             if((res = insere_ArvAVL(&(atual->dir), valor)) == 1){
                 if(fatorBalanceamento_NO(atual) >= 2){
-                    if((*raiz)->dir->info < valor){
+                    if((*raiz)->dir->info.codigo < valor){
                         rotacaoRR(raiz);
                     }else{
                         rotacaoRL(raiz);
@@ -190,7 +219,7 @@ int remove_ArvAVL(ArvAVL *raiz, int valor){
         return 0;
     }
     int res;
-    if(valor < (*raiz)->info){
+    if(valor < (*raiz)->info.codigo){
         if((res = remove_ArvAVL(&(*raiz)->esq, valor)) == 1){
             if(fatorBalanceamento_NO(*raiz) >= 2){
                 if(alt_no((*raiz)->dir->esq) <= alt_no((*raiz)->dir->dir)){
@@ -201,7 +230,7 @@ int remove_ArvAVL(ArvAVL *raiz, int valor){
             }
         }
     }
-    if((*raiz)->info < valor){
+    if((*raiz)->info.codigo < valor){
         if((res = remove_ArvAVL(&(*raiz)->dir, valor)) == 1){
             if(fatorBalanceamento_NO(*raiz) >= 2){
                 if(alt_no((*raiz)->esq->dir) <= alt_no((*raiz)->esq->esq)){
@@ -212,7 +241,7 @@ int remove_ArvAVL(ArvAVL *raiz, int valor){
             }
         }
     }
-    if((*raiz)->info == valor){
+    if((*raiz)->info.codigo == valor){
         if(((*raiz)->esq == NULL) || (*raiz)->dir == NULL){
             struct NO *no_velho = (*raiz);
             if((*raiz)->esq != NULL){
@@ -223,8 +252,8 @@ int remove_ArvAVL(ArvAVL *raiz, int valor){
             free(no_velho);
         }else{
             struct NO *temp = procuramenor((*raiz)->dir);
-            (*raiz)->info = temp->info;
-            remove_ArvAVL((*raiz)->dir, (*raiz)->info);
+            (*raiz)->info.codigo = temp->info.codigo;
+            remove_ArvAVL((*raiz)->dir, (*raiz)->info.codigo);
             if(fatorBalanceamento_NO(*raiz) >= 2){
                 if(alt_no((*raiz)->esq->dir) <= alt_no((*raiz)->esq->esq)){
                     rotacaoLL(raiz);
@@ -252,7 +281,7 @@ void preOrdem_ArvAVL(ArvAVL *raiz){
         return;
     }
     if(*raiz != NULL){
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
         preOrdem_ArvAVL(&((*raiz)->esq));
         preOrdem_ArvAVL(&((*raiz)->dir));
     }
@@ -264,7 +293,7 @@ void emOrdem_ArvAVL(ArvAVL *raiz){
     }
     if(*raiz != NULL){
         emOrdem_ArvAVL(&((*raiz)->esq));
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
         emOrdem_ArvAVL(&((*raiz)->dir));
     }
 }
@@ -276,7 +305,7 @@ void posOrdem_ArvAVL(ArvAVL *raiz){
     if(*raiz != NULL){
         posOrdem_ArvAVL(&((*raiz)->esq));
         posOrdem_ArvAVL(&((*raiz)->dir));
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
     }
 }
 

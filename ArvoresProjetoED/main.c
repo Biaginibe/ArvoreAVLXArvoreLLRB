@@ -6,6 +6,8 @@
 int main(){
 
     int x;
+
+
     ArvAVL *raizAVL;
     ArvLLRB *raizLLRB;
 
@@ -13,6 +15,8 @@ int main(){
     raizAVL = cria_ArvAVL();
     /*cria raizLLRB*/
     raizLLRB = cria_ArvLLRB();
+
+    coleta_dados();
 
     /*inserindo dados AVL*/
     x = insere_ArvAVL(raizAVL, 100);

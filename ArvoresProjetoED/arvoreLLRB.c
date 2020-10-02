@@ -5,8 +5,18 @@
 #define RED 1
 #define BLACK 0
 
+
+struct informacao{
+    int codigo;
+    char nome[100];
+    int idade;
+    char empresa[30];
+    char depto[30];
+    float salario;
+};
+
 struct NO{
-    int info;
+    struct informacao info;
     int cor;
     struct NO *esq;
     struct NO *dir;
@@ -74,10 +84,10 @@ int consulta_arvLLRB(ArvLLRB *raiz, int valor){
     }
     struct NO *atual = *raiz;
     while(atual != NULL){
-        if(valor == atual->info){
+        if(valor == atual->info.codigo){
             return 1;
         }
-        if(valor>atual->info){
+        if(valor>atual->info.codigo){
             atual=atual->dir;
         }else{
             atual = atual->esq;
@@ -164,17 +174,17 @@ struct NO *insereNO(struct NO *H, int valor, int *resp){
            *resp = 0;
            return NULL;
         }
-        novo->info = valor;
+        novo->info.codigo = valor;
         novo->cor = RED;
         novo->dir = NULL;
         novo->esq = NULL;
         *resp = 1;
         return novo;
     }
-    if(valor == H->info){
+    if(valor == H->info.codigo){
         *resp = 0;
     }else{
-        if(valor < H->info){
+        if(valor < H->info.codigo){
             H->esq = insereNO(H->esq, valor, resp);
         }else{
             H->dir = insereNO(H->dir, valor, resp);
@@ -224,7 +234,7 @@ struct NO *removeMenor(struct NO *H){
 }
 
 struct NO *removeNO(struct NO *H, int valor){
-    if(valor < H->info){
+    if(valor < H->info.codigo){
         if(cor(H->esq) == BLACK && cor(H->esq->esq) == BLACK){
             H = move2EsqRED(H);
         }
@@ -233,16 +243,16 @@ struct NO *removeNO(struct NO *H, int valor){
         if(cor(H->esq) == RED){
             H = rotacionaDireita(H);
         }
-        if(valor == H->info && (H->dir == NULL)){
+        if(valor == H->info.codigo && (H->dir == NULL)){
             free(H);
             return NULL;
         }
         if(cor(H->dir) == BLACK && cor(H->dir->esq) == BLACK){
             H = move2DirRED(H);
         }
-        if(valor == H->info){
+        if(valor == H->info.codigo){
             struct NO *x = procuraMenor(H->dir);
-            H->info = x->info;
+            H->info.codigo = x->info.codigo;
             H->dir = removeMenor(H->dir);
         }else{
             H->dir = removeNO(H->dir, valor);
@@ -274,7 +284,7 @@ void preOrdem_ArvLLRB(ArvLLRB *raiz){
         return;
     }
     if(*raiz != NULL){
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
         preOrdem_ArvLLRB(&((*raiz)->esq));
         preOrdem_ArvLLRB(&((*raiz)->dir));
     }
@@ -286,7 +296,7 @@ void emOrdem_ArvLLRB(ArvLLRB *raiz){
     }
     if(*raiz != NULL){
         emOrdem_ArvLLRB(&((*raiz)->esq));
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
         emOrdem_ArvLLRB(&((*raiz)->dir));
     }
 }
@@ -298,7 +308,7 @@ void posOrdem_ArvLLRB(ArvLLRB *raiz){
     if(*raiz != NULL){
         posOrdem_ArvLLRB(&((*raiz)->esq));
         posOrdem_ArvLLRB(&((*raiz)->dir));
-        printf("%d\n", (*raiz)->info);
+        printf("%d\n", (*raiz)->info.codigo);
     }
 }
 

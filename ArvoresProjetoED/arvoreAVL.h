@@ -1,6 +1,10 @@
 typedef struct NO *ArvAVL;
 
+typedef struct informacao func;
+
 ArvAVL *cria_ArvAVL();
+
+void coleta_dados();
 
 void liberar_ArvAVL(ArvAVL *raiz);
 
