@@ -63,6 +63,7 @@ int main(){
     }
     printf("\n");*/
 
+
     /*testa se ta vazia ARV AVL*/
     if(vazia_ArvAVL(raizAVL)){
         printf("A arvore esta vazia.");
@@ -82,9 +83,9 @@ int main(){
     printf("\n\n");
 
     /*organizando em pré-ordem AVL*/
-    printf("PRE ORDEM\n");
+    /*printf("PRE ORDEM\n");
     preOrdem_ArvAVL(raizAVL);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*organizando em ordem AVL*/
     printf("EM ORDEM\n");
@@ -92,15 +93,15 @@ int main(){
     printf("\n\n");
 
     /*organizando em pós-ordem AVL*/
-    printf("POS ORDEM\n");
+    /*printf("POS ORDEM\n");
     posOrdem_ArvAVL(raizAVL);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*removendo e exibindo arvore após remoção AVL*/
-    printf("POS REMOCAO\n");
+    /*printf("POS REMOCAO\n");
     x = remove_ArvAVL(raizAVL, 100);
     posOrdem_ArvAVL(raizAVL);
-    printf("\n\n");
+    printf("\n\n");*/
 
     /*INSERINDO ARVORE LLRB*/
     printf("AGORA ARV LLRB ");

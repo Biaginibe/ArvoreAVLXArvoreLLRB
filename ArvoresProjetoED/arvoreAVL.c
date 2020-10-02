@@ -26,29 +26,7 @@ ArvAVL *cria_ArvAVL(){
     return raiz;
 }
 
-void coleta_dados(ArvAVL *raiz){
-    /*------------------------------------------------------*/
-    FILE *massadados;
-    massadados = fopen("massaDados.csv", "r");
-    if(massadados == NULL){
-        printf("Não foi possivel abrir o arquivo massa de dados\n\n");
-        exit(0);
-    }else{
-        printf("\n\nChegamos aqui\n\n\n\n");
-    }
-    char *texto;
-    struct NO no;
-    while(fgets(texto, 100, massadados)){
-		 no.info.codigo = atoi(strtok(texto, ";"));
-		 strcpy(no.info.nome, strtok(NULL, ";"));
-		 no.info.idade = atoi(strtok(NULL, ";"));
-		 strcpy(no.info.depto, strtok(NULL, ";"));
-		 no.info.salario = atof(strtok(NULL, "\n"));
-		 insere_ArvAVL(*raiz, no.info.codigo);
-    }
-    /*------------------------------------------------------*/
-    fclose(massadados);
-}
+
 void liberar_ArvAVL(ArvAVL *raiz){
     if(raiz == NULL){
         return;
@@ -105,7 +83,7 @@ int totalNO_ArvAVL(ArvAVL *raiz){
     return (alt_esq + alt_dir + 1);
 }
 
-/*FUNÇÕES DA ARVORE AVL*/
+/*FUNï¿½ï¿½ES DA ARVORE AVL*/
 
 int alt_no(struct NO *no){
     if(no == NULL){
@@ -157,17 +135,19 @@ void rotacaoRL(ArvAVL *raiz){
     rotacaoRR(raiz);
 }
 
-int insere_ArvAVL(ArvAVL *raiz, int valor){
+int insere_ArvAVL(ArvAVL *raiz, func inf){
+
     int res;
     if(*raiz == NULL){
         struct NO *novo;
         novo = (struct NO*) malloc(sizeof(struct NO));
 
         if(novo == NULL){
-            printf("NÓ NOVO VAZIO\n");
+            printf("Nï¿½ NOVO VAZIO\n");
             return 0;
         }
-        novo->info.codigo = valor;
+
+        novo->info = inf;
         novo->alt = 0;
         novo->dir = NULL;
         novo->esq = NULL;
@@ -176,10 +156,10 @@ int insere_ArvAVL(ArvAVL *raiz, int valor){
     }
 
     struct NO *atual = *raiz;
-    if(valor < atual->info.codigo){
-        if((res = insere_ArvAVL(&(atual->esq), valor)) == 1){
+    if(inf.codigo < atual->info.codigo){
+        if((res = insere_ArvAVL(&(atual->esq), inf)) == 1){
             if(fatorBalanceamento_NO(atual) >= 2){
-                if(valor < (*raiz)->esq->info.codigo){
+                if(inf.codigo < (*raiz)->esq->info.codigo){
                     rotacaoLL(raiz);
                 }else{
                     rotacaoLR(raiz);
@@ -187,10 +167,10 @@ int insere_ArvAVL(ArvAVL *raiz, int valor){
             }
         }
     }else{
-        if(valor > atual->info.codigo){
-            if((res = insere_ArvAVL(&(atual->dir), valor)) == 1){
+        if(inf.codigo > atual->info.codigo){
+            if((res = insere_ArvAVL(&(atual->dir), inf)) == 1){
                 if(fatorBalanceamento_NO(atual) >= 2){
-                    if((*raiz)->dir->info.codigo < valor){
+                    if((*raiz)->dir->info.codigo < inf.codigo){
                         rotacaoRR(raiz);
                     }else{
                         rotacaoRL(raiz);
@@ -311,3 +291,28 @@ void posOrdem_ArvAVL(ArvAVL *raiz){
     }
 }
 
+void coleta_dados(ArvAVL *raiz){
+    /*------------------------------------------------------*/
+    FILE *massadados;
+    massadados = fopen("massaDados.csv", "r");
+    if(massadados == NULL){
+        printf("Nï¿½o foi possivel abrir o arquivo massa de dados\n\n");
+        exit(0);
+    }else{
+        printf("Chegamos aqui\n");
+    }
+    struct informacao func;
+    char texto[100];
+    /*struct NO no;*/
+    while(fgets(texto, 100, massadados)){
+		 func.codigo = atoi(strtok(texto, ";"));
+		 strcpy(func.nome, strtok(NULL, ";"));
+		 func.idade = atoi(strtok(NULL, ";"));
+		 strcpy(func.empresa, strtok(NULL, ";"));
+		 strcpy(func.depto, strtok(NULL, ";"));
+		 func.salario = atof(strtok(NULL, "\n"));
+		 insere_ArvAVL(raiz, func);
+    }
+    /*------------------------------------------------------*/
+    fclose(massadados);
+}
