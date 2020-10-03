@@ -1,7 +1,7 @@
 
 typedef struct NO *ArvLLRB;
 
-typedef struct informacao func;
+typedef struct informacao funcionario;
 
 ArvLLRB *cria_ArvLLRB();
 

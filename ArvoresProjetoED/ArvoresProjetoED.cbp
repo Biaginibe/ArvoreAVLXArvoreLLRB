@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="RadixSort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="RadixSort.h" />
 		<Unit filename="arvoreAVL.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,6 +46,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ordenaDados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ordenaDados.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

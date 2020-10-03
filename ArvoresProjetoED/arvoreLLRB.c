@@ -322,12 +322,13 @@ void coleta_dadosLLRB(ArvLLRB *raiz, int ordenado){
         massadados = fopen("massaDados.csv", "r");
 
     if(massadados == NULL){
-        printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
+        printf("Nao foi possivel abrir o arquivo massa de dados\n\n");
         exit(0);
     }else{
         printf("Chegamos aqui\n");
     }
-    struct informacao func;
+    
+    funcionario func;
     char texto[100];
 
     while(fgets(texto, 100, massadados)){
@@ -342,6 +343,3 @@ void coleta_dadosLLRB(ArvLLRB *raiz, int ordenado){
     /*------------------------------------------------------*/
     fclose(massadados);
 }
-
-
-

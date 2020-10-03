@@ -5,6 +5,7 @@
 #include "arvoreAVL.h"
 #include "arvoreLLRB.h"
 #include "RadixSort.h"
+#include "ordenaDados.h"
 
 void chamaAVLDesordenada();
 void chamaAVLOrdenada();
@@ -67,7 +68,7 @@ void chamaAVLDesordenada() {
 
     liberar_ArvAVL(raizAVL);
 
-    printf("Tempo de alocacao de items desordenados na Arvore AVL: %.2fms", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items desordenados na Arvore AVL: %f microssegundos", tempoDepois - tempoAntes);
     return;
 }
 void chamaAVLOrdenada() {
@@ -86,7 +87,7 @@ void chamaAVLOrdenada() {
 
     liberar_ArvAVL(raizAVL);
 
-    printf("Tempo de alocacao de items ordenados na Arvore AVL: %.2fms", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items ordenados na Arvore AVL: %f microssegundos", tempoDepois - tempoAntes);
     return;
 }
 
@@ -102,9 +103,8 @@ void chamaLLRBDesordenada() {
     double tempoDepois = ftempoDepois();
 
     liberar_ArvLLRB(raizLLRB);
-    return;
 
-    printf("Tempo de alocacao de items desordenados na Arvore LLRB: %.2fms", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items desordenados na Arvore LLRB: %f microssegundos", tempoDepois - tempoAntes);
 }
 
 void chamaLLRBOrdenada() {
@@ -112,29 +112,29 @@ void chamaLLRBOrdenada() {
 
     ordenaMassaDados();
 
-    ArvLLRB *raizLLRB, LLRBordenada[15000];
+    ArvLLRB *raizLLRB;
 
     double tempoAntes = ftempoAntes();
 
     raizLLRB = cria_ArvLLRB();
-    coleta_dadosLLRB(raizLLRB, 1);
+    coleta_dadosLLRB(raizLLRB, 0);
 
     double tempoDepois = ftempoDepois();
 
     liberar_ArvLLRB(raizLLRB);
 
-    printf("Tempo de alocacao de items ordenados na Arvore LLRB: %.2fms", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items ordenados na Arvore LLRB: %f microssegundos", tempoDepois - tempoAntes);
     return;
 }
 
 double ftempoAntes(){
     struct timeval Tempo_antes; /*tv de timeval*/
     gettimeofday(&Tempo_antes, NULL);
-    return (Tempo_antes.tv_sec + Tempo_antes.tv_usec * 1000000.0);
+    return (Tempo_antes.tv_sec + Tempo_antes.tv_usec / 1000000.0);
 }
 
 double ftempoDepois(){
     struct timeval Tempo_depois; /*tv de timeval*/
     gettimeofday(&Tempo_depois, NULL);
-    return (Tempo_depois.tv_sec + Tempo_depois.tv_usec * 1000000.0);
+    return (Tempo_depois.tv_sec + Tempo_depois.tv_usec / 1000000.0);
 }

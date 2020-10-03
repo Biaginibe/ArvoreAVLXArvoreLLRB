@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1601688258 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.c
+1601689626 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
@@ -7,14 +7,14 @@
 
 1601687761 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.h
 
-1601687901 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.c
+1601689611 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreLLRB.h"
 
-1601687911 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.h
+1601688880 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.h
 
-1601688651 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\main.c
+1601689594 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -22,10 +22,19 @@
 	"arvoreAVL.h"
 	"arvoreLLRB.h"
 	"RadixSort.h"
+	"ordenaDados.h"
 
 1601686832 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\radixsort.h
 
 1601686886 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\radixsort.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+	"RadixSort.h"
+
+1601688996 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\ordenadados.h
+
+1601688978 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\ordenadados.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
