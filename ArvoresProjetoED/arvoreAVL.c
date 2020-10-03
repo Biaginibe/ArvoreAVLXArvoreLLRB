@@ -361,7 +361,7 @@ void ordenaMassaDados() {
     fclose(massadados);
 
     printf("abrindo arq novamente\n");
-    massadados = fopen("massaDados.csv", "w");
+    massadados = fopen("massaDados2.csv", "w");
 
     for (i = 0; i < 15000; i++) {
         fprintf(massadados, "%d;",ordenado[i].codigo);
