@@ -1,6 +1,6 @@
 typedef struct NO *ArvAVL;
 
-typedef struct informacao func;
+typedef struct informacao funcionario;
 
 ArvAVL *cria_ArvAVL();
 
@@ -18,7 +18,7 @@ void emOrdem_ArvAVL(ArvAVL *raiz);
 
 void posOrdem_ArvAVL(ArvAVL *raiz);
 
-int insere_ArvAVL(ArvAVL *raiz, func inf);
+int insere_ArvAVL(ArvAVL *raiz, funcionario inf);
 
 int remove_ArvAVL(ArvAVL *raiz, int valor);
 

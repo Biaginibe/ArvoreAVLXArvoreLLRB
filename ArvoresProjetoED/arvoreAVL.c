@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arvoreAVL.h"
+#include "RadixSort.h"
 
 struct informacao{
     int codigo;
@@ -12,7 +13,7 @@ struct informacao{
 };
 
 struct NO{
-    struct informacao info;
+    funcionario info;
     int alt;
     struct NO *esq;
     struct NO *dir;
@@ -135,7 +136,7 @@ void rotacaoRL(ArvAVL *raiz){
     rotacaoRR(raiz);
 }
 
-int insere_ArvAVL(ArvAVL *raiz, func inf){
+int insere_ArvAVL(ArvAVL *raiz, funcionario inf){
 
     int res;
     if(*raiz == NULL){
@@ -295,15 +296,44 @@ void coleta_dadosAVL(ArvAVL *raiz){
     /*------------------------------------------------------*/
     FILE *massadados;
     massadados = fopen("massaDados.csv", "r");
+
     if(massadados == NULL){
         printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
         exit(0);
-    }else{
-        printf("Chegamos aqui\n");
     }
-    struct informacao func;
+
+    printf("Ordenando 1...\n");
+    ordenaMassaDados(massadados);
+
+    funcionario info;
     char texto[100];
+
+    printf("inserindo na arvore\n");
     /*struct NO no;*/
+    while(fgets(texto, 100, massadados)){
+		 info.codigo = atoi(strtok(texto, ";"));
+		 strcpy(info.nome, strtok(NULL, ";"));
+		 info.idade = atoi(strtok(NULL, ";"));
+		 strcpy(info.empresa, strtok(NULL, ";"));
+		 strcpy(info.depto, strtok(NULL, ";"));
+		 info.salario = atof(strtok(NULL, "\n"));
+		 insere_ArvAVL(raiz, info);
+    }
+    /*------------------------------------------------------*/
+    fclose(massadados);
+}
+
+void ordenaMassaDados(FILE *massadados) {
+  printf("Ordenando massa de dados\n");  
+    
+    funcionario func; 
+    funcionario *ordenado;
+    int i = 0;
+
+    ordenado = (funcionario*) malloc(15000 * sizeof(funcionario));
+
+    char texto[100];
+
     while(fgets(texto, 100, massadados)){
 		 func.codigo = atoi(strtok(texto, ";"));
 		 strcpy(func.nome, strtok(NULL, ";"));
@@ -311,8 +341,23 @@ void coleta_dadosAVL(ArvAVL *raiz){
 		 strcpy(func.empresa, strtok(NULL, ";"));
 		 strcpy(func.depto, strtok(NULL, ";"));
 		 func.salario = atof(strtok(NULL, "\n"));
-		 insere_ArvAVL(raiz, func);
+
+        ordenado[i] = func;
+        i++;
     }
-    /*------------------------------------------------------*/
+
+
     fclose(massadados);
+
+    printf("abrindo arq novamente\n");
+    massadados = fopen("massaDados2.csv", "w");
+
+    for (i = 0; i < 15000; i++) {
+        fprintf(massadados, "%d;",ordenado[i].codigo);
+        fprintf(massadados, "%s;",ordenado[i].nome);
+        fprintf(massadados, "%d;",ordenado[i].idade);
+        fprintf(massadados, "%s;",ordenado[i].empresa);
+        fprintf(massadados, "%s;",ordenado[i].depto);
+        fprintf(massadados, "%.2f\n", ordenado[i].salario);
+    }
 }
