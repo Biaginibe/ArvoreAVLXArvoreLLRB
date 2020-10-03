@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1601687167 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.c
+1601688258 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
 	"RadixSort.h"
 
-1601686599 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.h
+1601687761 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.h
 
-1601676798 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.c
+1601687901 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreLLRB.h"
 
-1601676798 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.h
+1601687911 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.h
 
-1601687088 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\main.c
+1601688651 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

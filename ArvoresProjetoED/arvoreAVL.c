@@ -293,7 +293,6 @@ void posOrdem_ArvAVL(ArvAVL *raiz){
 }
 
 void coleta_dadosAVL(ArvAVL *raiz, int ordenado){
-    printf("entrando na coleta!");
     /*------------------------------------------------------*/
     FILE *massadados;
 
@@ -303,7 +302,7 @@ void coleta_dadosAVL(ArvAVL *raiz, int ordenado){
         massadados = fopen("massaDados.csv", "r");
 
     if(massadados == NULL){
-        printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
+        printf("Nao foi possivel abrir o arquivo massa de dados\n\n");
         exit(0);
     }
 
@@ -311,7 +310,6 @@ void coleta_dadosAVL(ArvAVL *raiz, int ordenado){
     char texto[100];
 
     printf("inserindo na arvore\n");
-    /*struct NO no;*/
     while(fgets(texto, 100, massadados)){
 		 info.codigo = atoi(strtok(texto, ";"));
 		 strcpy(info.nome, strtok(NULL, ";"));
@@ -325,14 +323,12 @@ void coleta_dadosAVL(ArvAVL *raiz, int ordenado){
     fclose(massadados);
 }
 
-void ordenaMassaDados() {
-    printf("Ordenando massa de dados\n");  
-    
+void ordenaMassaDados() {    
     FILE *massadados;
     massadados = fopen("massaDados.csv", "r");
 
     if(massadados == NULL){
-        printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
+        printf("Nao foi possivel abrir o arquivo massa de dados\n\n");
         exit(0);
     }
     

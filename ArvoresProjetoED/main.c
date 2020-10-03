@@ -14,7 +14,7 @@ double ftempoAntes();
 double ftempoDepois();
 void ordenaMassaDados();
 
-int main(){
+int main() {
 
     int x;
 
@@ -52,195 +52,6 @@ int main(){
     }
 
     return 0;
-
-    /*ArvAVL *raizAVL, AVLordenada[15000];
-    ArvLLRB *raizLLRB, LLRBordenada[15000];
-
-    //cria raizAVL
-    raizAVL = cria_ArvAVL();
-    //cria raizLLRB
-    raizLLRB = cria_ArvLLRB();
-
-    coleta_dadosAVL(raizAVL);
-
-
-    coleta_dadosLLRB(raizLLRB);*/
-
-
-    /*inserindo dados AVL*/
-    /*x = insere_ArvAVL(raizAVL, 100);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 140);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 160);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 130);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 150);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 110);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvAVL(raizAVL, 120);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    printf("\n");*/
-
-
-    /*testa se ta vazia ARV AVL*/
-    // if(vazia_ArvAVL(raizAVL)){
-    //     printf("A arvore esta vazia.");
-    // }else{
-    //     printf("A arvore possui elementos.");
-    // }
-    // printf("\n\n");
-
-    // /*ver a altura AVL*/
-    // x = altura_ArvAVL(raizAVL);
-    // printf("Altura da arvore: %d", x);
-    // printf("\n\n");
-
-    // /*total de n�s ARV AVL*/
-    // x= totalNO_ArvAVL(raizAVL);
-    // printf("Total de nos na arvore: %d", x);
-    // printf("\n\n");
-
-    /*organizando em pr�-ordem AVL*/
-    /*printf("PRE ORDEM\n");
-    preOrdem_ArvAVL(raizAVL);
-    printf("\n\n");*/
-
-    /*organizando em ordem AVL*/
-    // printf("EM ORDEM\n");
-    // emOrdem_ArvAVL(raizAVL);
-    // printf("\n\n");
-
-    /*organizando em p�s-ordem AVL*/
-    /*printf("POS ORDEM\n");
-    posOrdem_ArvAVL(raizAVL);
-    printf("\n\n");*/
-
-    /*removendo e exibindo arvore ap�s remo��o AVL*/
-    /*printf("POS REMOCAO\n");
-    x = remove_ArvAVL(raizAVL, 100);
-    posOrdem_ArvAVL(raizAVL);
-    printf("\n\n");*/
-
-    /*INSERINDO ARVORE LLRB*/
-    // printf("AGORA ARV LLRB ");
-    /*x = insere_ArvLLRB(raizLLRB, 150);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 110);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 100);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 130);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 120);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 140);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    x = insere_ArvLLRB(raizLLRB, 160);
-    if(x){
-        printf("Elemento inserido com sucesso!\n\n");
-    }else{
-        printf("Erro, n�o foi possivel inserir o elemento.\n\n");
-    }
-    printf("\n");
-*/
-    /*testa se ta vazia ARV LLRB*/
-    // if(vazia_ArvLLRB(raizLLRB)){
-    //     printf("A arvore esta vazia.");
-    // }else{
-    //     printf("A arvore possui elementos.");
-    // }
-    // printf("\n\n");
-
-    // /*ver a altura LLRB*/
-    // x = altura_ArvLLRB(raizLLRB);
-    // printf("Altura da arvore: %d", x);
-    // printf("\n\n");
-
-    // /*total de n�s ARV LLRB*/
-    // x= totalNO_ArvLLRB(raizLLRB);
-    // printf("Total de nos na arvore: %d", x);
-    // printf("\n\n");
-
-    /*organizando em pr�-ordem AVL*/
-    /*printf("PRE ORDEM\n");
-    preOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");*/
-
-    /*organizando em ordem LLRB*/
-    // printf("EM ORDEM\n");
-    // emOrdem_ArvLLRB(raizLLRB);
-    // printf("\n\n");
-
-    /*organizando em p�s-ordem LLRB*/
-    /*printf("POS ORDEM\n");
-    posOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");*/
-
-    /*removendo e exibindo arvore ap�s remo��o LLRB*/
-    /*printf("POS REMOCAO\n");
-    x = remove_ArvLLRB(raizLLRB, 100);
-    posOrdem_ArvLLRB(raizLLRB);
-    printf("\n\n");*/
-
-    /*destroi a arvore AVL*/
-    // liberar_ArvAVL(raizAVL);
-    /*destroi a arvore LLRB*/
-    // liberar_ArvLLRB(raizLLRB);
 }
 
 void chamaAVLDesordenada() {
@@ -256,7 +67,7 @@ void chamaAVLDesordenada() {
 
     liberar_ArvAVL(raizAVL);
 
-    printf("Tempo de alocação de items desordenados na Arvore AVL: %2.f", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items desordenados na Arvore AVL: %.2fms", tempoDepois - tempoAntes);
     return;
 }
 void chamaAVLOrdenada() {
@@ -275,7 +86,7 @@ void chamaAVLOrdenada() {
 
     liberar_ArvAVL(raizAVL);
 
-    printf("Tempo de alocação de items ordenados na Arvore AVL: %2.f", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items ordenados na Arvore AVL: %.2fms", tempoDepois - tempoAntes);
     return;
 }
 
@@ -293,13 +104,13 @@ void chamaLLRBDesordenada() {
     liberar_ArvLLRB(raizLLRB);
     return;
 
-    printf("Tempo de alocação de items desordenados na Arvore LLRB: %2.f", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items desordenados na Arvore LLRB: %.2fms", tempoDepois - tempoAntes);
 }
 
 void chamaLLRBOrdenada() {
     printf("Chamando funcao para dados ordenados...\n");
 
-    //ordenaMassaDados();
+    ordenaMassaDados();
 
     ArvLLRB *raizLLRB, LLRBordenada[15000];
 
@@ -312,18 +123,18 @@ void chamaLLRBOrdenada() {
 
     liberar_ArvLLRB(raizLLRB);
 
-    printf("Tempo de alocação de items ordenados na Arvore LLRB: %2.f", tempoDepois - tempoAntes);
+    printf("Tempo de alocacao de items ordenados na Arvore LLRB: %.2fms", tempoDepois - tempoAntes);
     return;
 }
 
 double ftempoAntes(){
     struct timeval Tempo_antes; /*tv de timeval*/
     gettimeofday(&Tempo_antes, NULL);
-    return (Tempo_antes.tv_sec + Tempo_antes.tv_usec/1000000.0);
+    return (Tempo_antes.tv_sec + Tempo_antes.tv_usec * 1000000.0);
 }
 
 double ftempoDepois(){
     struct timeval Tempo_depois; /*tv de timeval*/
     gettimeofday(&Tempo_depois, NULL);
-    return (Tempo_depois.tv_sec + Tempo_depois.tv_usec/1000000.0);
+    return (Tempo_depois.tv_sec + Tempo_depois.tv_usec * 1000000.0);
 }
