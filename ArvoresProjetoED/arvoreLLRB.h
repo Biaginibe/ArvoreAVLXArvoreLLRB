@@ -25,5 +25,5 @@ int insere_ArvLLRB(ArvLLRB *raiz, struct informacao inf);
 
 int remove_ArvLLRB(ArvLLRB *raiz, int valor);
 
-void coleta_dadosLLRB(ArvLLRB *raiz);
+void coleta_dadosLLRB(ArvLLRB *raiz, int ordenado);
 

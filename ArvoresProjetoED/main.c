@@ -37,7 +37,7 @@ int main(){
 
     if (opcaoEscolhida == 1) {
         chamaAVLDesordenada();
-    } 
+    }
 
     if (opcaoEscolhida == 2) {
         chamaAVLOrdenada();
@@ -49,22 +49,22 @@ int main(){
 
     if (opcaoEscolhida == 4) {
         chamaLLRBOrdenada();
-    }   
+    }
 
     return 0;
 
-    ArvAVL *raizAVL, AVLordenada[15000];
+    /*ArvAVL *raizAVL, AVLordenada[15000];
     ArvLLRB *raizLLRB, LLRBordenada[15000];
 
-    /*cria raizAVL*/
+    //cria raizAVL
     raizAVL = cria_ArvAVL();
-    /*cria raizLLRB*/
+    //cria raizLLRB
     raizLLRB = cria_ArvLLRB();
 
     coleta_dadosAVL(raizAVL);
 
 
-    coleta_dadosLLRB(raizLLRB);
+    coleta_dadosLLRB(raizLLRB);*/
 
 
     /*inserindo dados AVL*/
@@ -250,7 +250,7 @@ void chamaAVLDesordenada() {
     double tempoAntes = ftempoAntes();
 
     raizAVL = cria_ArvAVL();
-    coleta_dadosAVL(raizAVL);
+    coleta_dadosAVL(raizAVL, 0);
 
     double tempoDepois = ftempoDepois();
 
@@ -261,7 +261,7 @@ void chamaAVLDesordenada() {
 }
 void chamaAVLOrdenada() {
     printf("Chamando funcao para dados ordenados...\n");
-    
+
     ordenaMassaDados();
 
     ArvAVL *raizAVL;
@@ -269,7 +269,7 @@ void chamaAVLOrdenada() {
     double tempoAntes = ftempoAntes();
 
     raizAVL = cria_ArvAVL();
-    coleta_dadosAVL(raizAVL);
+    coleta_dadosAVL(raizAVL, 1);
 
     double tempoDepois = ftempoDepois();
 
@@ -286,19 +286,19 @@ void chamaLLRBDesordenada() {
     double tempoAntes = ftempoAntes();
 
     raizLLRB = cria_ArvLLRB();
-    coleta_dadosLLRB(raizLLRB);
+    coleta_dadosLLRB(raizLLRB, 0);
 
     double tempoDepois = ftempoDepois();
 
     liberar_ArvLLRB(raizLLRB);
     return;
-    
+
     printf("Tempo de alocação de items desordenados na Arvore LLRB: %2.f", tempoDepois - tempoAntes);
 }
 
 void chamaLLRBOrdenada() {
     printf("Chamando funcao para dados ordenados...\n");
-    
+
     //ordenaMassaDados();
 
     ArvLLRB *raizLLRB, LLRBordenada[15000];
@@ -306,7 +306,7 @@ void chamaLLRBOrdenada() {
     double tempoAntes = ftempoAntes();
 
     raizLLRB = cria_ArvLLRB();
-    coleta_dadosLLRB(raizLLRB);
+    coleta_dadosLLRB(raizLLRB, 1);
 
     double tempoDepois = ftempoDepois();
 

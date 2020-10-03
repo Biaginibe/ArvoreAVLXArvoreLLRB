@@ -22,5 +22,5 @@ int insere_ArvAVL(ArvAVL *raiz, funcionario inf);
 
 int remove_ArvAVL(ArvAVL *raiz, int valor);
 
-void coleta_dadosAVL(ArvAVL *raiz);
+void coleta_dadosAVL(ArvAVL *raiz, int ordenado);
 

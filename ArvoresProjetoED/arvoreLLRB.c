@@ -312,10 +312,15 @@ void posOrdem_ArvLLRB(ArvLLRB *raiz){
     }
 }
 
-void coleta_dadosLLRB(ArvLLRB *raiz){
+void coleta_dadosLLRB(ArvLLRB *raiz, int ordenado){
     /*------------------------------------------------------*/
     FILE *massadados;
-    massadados = fopen("massaDados.csv", "r");
+    
+     if (ordenado) 
+        massadados = fopen("massaDadosOrdenado.csv", "r");
+    else 
+        massadados = fopen("massaDados.csv", "r");
+
     if(massadados == NULL){
         printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
         exit(0);

@@ -292,11 +292,15 @@ void posOrdem_ArvAVL(ArvAVL *raiz){
     }
 }
 
-void coleta_dadosAVL(ArvAVL *raiz){
+void coleta_dadosAVL(ArvAVL *raiz, int ordenado){
     printf("entrando na coleta!");
     /*------------------------------------------------------*/
     FILE *massadados;
-    massadados = fopen("massaDados.csv", "r");
+
+    if (ordenado) 
+        massadados = fopen("massaDadosOrdenado.csv", "r");
+    else 
+        massadados = fopen("massaDados.csv", "r");
 
     if(massadados == NULL){
         printf("N�o foi possivel abrir o arquivo massa de dados\n\n");
@@ -361,7 +365,7 @@ void ordenaMassaDados() {
     fclose(massadados);
 
     printf("abrindo arq novamente\n");
-    massadados = fopen("massaDados2.csv", "w");
+    massadados = fopen("massaDadosOrdenado.csv", "w");
 
     for (i = 0; i < 15000; i++) {
         fprintf(massadados, "%d;",ordenado[i].codigo);
