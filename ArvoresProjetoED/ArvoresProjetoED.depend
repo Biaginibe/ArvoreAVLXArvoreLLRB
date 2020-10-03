@@ -1,38 +1,33 @@
 # depslib dependency file v1.0
-1601662853 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\main.c
+1601687167 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
-	"arvoreLLRB.h"
-	"ColetaDados.h"
+	"RadixSort.h"
 
-1601078175 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvore.h
+1601686599 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvoreavl.h
 
-1601078368 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvore.c
-	<stdio.h>
-	<stdlib.h>
-	"arvore.h"
-
-1601662786 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.c
-	<stdio.h>
-	<stdlib.h>
-	"arvoreAVL.h"
-
-1601662786 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvoreavl.h
-
-1601662786 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.h
-
-1601662874 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\arvorellrb.c
+1601676798 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreLLRB.h"
 
-1601662786 source:c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\coletadados.c
+1601676798 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\arvorellrb.h
+
+1601687088 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\main.c
 	<stdio.h>
 	<stdlib.h>
-	"ColetaDados.h"
+	<time.h>
+	<sys/time.h>
 	"arvoreAVL.h"
 	"arvoreLLRB.h"
+	"RadixSort.h"
 
-1601662786 c:\users\biahs\onedrive\햞ea de trabalho\faculdade\ed2\arvoresprojetoed\coletadados.h
+1601686832 c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\radixsort.h
+
+1601686886 source:c:\users\neone\eloisa\code\ed2\arvoreavlxarvorellrb\arvoresprojetoed\radixsort.c
+	<stdio.h>
+	<stdlib.h>
+	"arvoreAVL.h"
+	"RadixSort.h"
 

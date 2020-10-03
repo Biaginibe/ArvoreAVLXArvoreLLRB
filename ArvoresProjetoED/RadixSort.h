@@ -1,1 +1,1 @@
-void radixsort(int *v, int len);
+void radixsort(funcionario *v, int len, int maior);

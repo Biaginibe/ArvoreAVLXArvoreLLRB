@@ -262,7 +262,7 @@ void chamaAVLDesordenada() {
 void chamaAVLOrdenada() {
     printf("Chamando funcao para dados ordenados...\n");
     
-    //ordenaMassaDados();
+    ordenaMassaDados();
 
     ArvAVL *raizAVL;
 
